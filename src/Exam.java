@@ -26,4 +26,9 @@ class Exam {
     public boolean isLongerThan(Exam other) {
         return this.duration > other.duration;
     }
+
+    @Override
+    public String toString() {
+        return "Exam{title='" + title + "', duration=" + duration + "}";
+    }
 }

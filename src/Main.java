@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Objects;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -32,5 +36,32 @@ public class Main {
 
         System.out.println("\nCompare exams by duration:");
         System.out.println("Is exam1 longer than exam2? " + exam1.isLongerThan(exam2));
+
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<Question> questionPool = new ArrayList<>();
+        questionPool.add(q1);
+        questionPool.add(new Question("Java is OOP?", "yes"));
+        questionPool.add(new Question("2 + 2?", "4"));
+
+        System.out.print("\nEnter word to search question: ");
+        String word = scanner.nextLine();
+
+        for (Question q : questionPool) {
+            if (q.getText().contains(word)) {
+                System.out.println("Found question: " + q);
+            }
+        }
+
+        System.out.println("\nQuestions:");
+        for (Question q : questionPool) {
+            System.out.println(q);
+        }
+
+        System.out.println("\nEquals check:");
+        System.out.println("c1 equals c2? " + c1.equals(c2));
+        System.out.println("c1 equals c3? " + c1.equals(c3));
+
+        scanner.close();
     }
 }

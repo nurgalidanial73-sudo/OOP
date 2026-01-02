@@ -26,4 +26,23 @@ class Candidate {
     public boolean hasSameId(Candidate other) {
         return this.id == other.id;
     }
+
+    @Override
+    public String toString() {
+        return "Candidate{name='" + name + "', id=" + id + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Candidate) {
+            Candidate c = (Candidate) o;
+            return id == c.id;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }
